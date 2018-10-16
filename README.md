@@ -1,9 +1,7 @@
 # Design Patterns Java examples
 
 #### Observer Pattern
-
-Example:
-Having two objects, `o1` and `o2`.
+Given two objects, `o1` and `o2`.
 
 `o1` has a state that changes at times.
 `o2` needs to know about the state of `o1`.
@@ -22,25 +20,15 @@ The Observer Pattern defines a _one-to-many relationship_. So the observer (one)
 
 ![No image found](http://java.dzone.com/sites/all/files/observer_pattern.PNG)
 
+#### Decorator Pattern
 
+The Decorator Pattern attaches additional responsibilities to an object dynamically (at runtime). Decorators give an alternative to subclassing.
 
+Given two objects, `o1` and `o2`, 
 
+`o1` sends data to `o2`. `o2` then sends data back to `o1`. If we wanted the data sent back by `o2` to `o1` to be manipulated before sending it back (**without changing the code inside `o2`**)
+we would use the Decorator Pattern.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In essence, we _wrap_ the object sending back the response (`o2`) with another object that actually receives and sends the data back to `o1` with the modifications. The Decorator object _has_ a component and _is_ a component.
+   
+![No image found](https://cdn.journaldev.com/wp-content/uploads/2013/07/decorator-pattern.png)
