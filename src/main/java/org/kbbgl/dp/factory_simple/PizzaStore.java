@@ -1,23 +1,21 @@
 package org.kbbgl.dp.factory_simple;
 
-class PizzaStore {
-
-    private SimplePizzaFactory factory;
-
-    PizzaStore(SimplePizzaFactory factory) {
-        this.factory = factory;
-    }
+abstract class PizzaStore {
 
     Pizza orderPizza(String type, String size){
 
-        Pizza ordered = factory.createPizza(type, size);
-        System.out.println("Pizza ordered: " + ordered.toString());
-        ordered.prepare();
-        ordered.bake();
-        ordered.cut();
-        ordered.box();
-        ordered.delivering();
+        Pizza pizza;
 
-        return ordered;
+        pizza = createPizza(type, size);
+        System.out.println("Pizza ordered: " + pizza.toString());
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+        pizza.delivering();
+
+        return pizza;
     }
+
+    abstract Pizza createPizza(String type, String size);
 }

@@ -2,11 +2,9 @@ package org.kbbgl.dp.factory_simple;
 
 public abstract class Pizza {
 
-    private String description;
     private String size;
 
-    public Pizza(String description, String size) {
-        this.description = description;
+    public Pizza(String size) {
         this.size = size;
     }
 
@@ -32,9 +30,6 @@ public abstract class Pizza {
 
     @Override
     public String toString() {
-        return "{" +
-                "description='" + description + '\'' +
-                ", size='" + size + '\'' +
-                '}';
+        return "size=" + size;
     }
 }
